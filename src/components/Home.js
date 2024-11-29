@@ -98,8 +98,10 @@ const Home = () => {
                     toggleDarkMode={toggleDarkMode} 
                 />
             </nav>
-    
+
             <section className="p-8 text-center relative z-10" id="home">
+            <PongBackground isDarkMode={isDarkMode}/>
+
                 <h1 className="text-7xl font-semibold mb-4">
                     <TypingEffect 
                         text="Welcome To AceXplore!!" 
