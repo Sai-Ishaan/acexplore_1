@@ -1,0 +1,99 @@
+/* LightBulbSwitch.css */
+.light-bulb-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 80px;
+    height: 120px;
+  }
+  
+  .bulb-container {
+    position: relative;
+    width: 60px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  .bulb-glass {
+    width: 50px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #888;
+    transition: all 0.3s ease;
+  }
+  
+  .filament {
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+  
+  .filament.on {
+    background: radial-gradient(circle, #ffff00, #ffd700);
+    box-shadow: 0 0 20px #ffff00;
+  }
+  
+  .filament.off {
+    background: #333;
+  }
+  
+  .bulb-base {
+    width: 40px;
+    height: 20px;
+    background-color: #555;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .string-container {
+    position: absolute;
+    bottom: -30px;
+    width: 2px;
+    height: 30px;
+    background-color: #777;
+  }
+  
+  .pull-string {
+    position: absolute;
+    bottom: -10px;
+    left: -7px;
+    width: 16px;
+    height: 10px;
+    background-color: #444;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .pull-string.pulled {
+    transform: translateY(15px);
+  }
+  
+  .string-handle {
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 4px;
+    background-color: #222;
+  }
+  
+  /* Dark Mode Styling */
+  .bulb-container.dark .bulb-glass {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-color: #333;
+  }
+  
+  .bulb-container.light .bulb-glass {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: #888;
+  }

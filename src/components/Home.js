@@ -9,6 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingScreen from './LoadingScreen';
 import users from '../data/data.json';
+import LightBulbSwitch from './LightBulbSwitch';
 const Home = () => {
     //const [email, setEmail] = useState('');
     const [registerNumber, setRegisterNumber] = useState('');
@@ -94,12 +95,9 @@ const Home = () => {
       </a>
     </li>
   </ul>
-  <button 
-    onClick={toggleDarkMode} 
-    className="navbar-mode-toggle"
-  >
-    {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-  </button>
+    <LightBulbSwitch 
+    isDarkMode={isDarkMode}
+    toggleDarkMode={toggleDarkMode} />
 </nav>
     
           <section className="p-8 text-center" id="home">

@@ -1,14 +1,22 @@
 /* Dark Mode Styles */
 .dark-mode {
-    background-color: #111;
-    color: #ccc;
-  }
-  
+  background-color: #1a202c;
+  color: #e2e8f0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
   .dark-mode nav {
     background-color: #333;
     color: #fff;
   }
-  
+
+  .dark-mode a {
+    color: #63b3ed;
+}
+
+.light-mode a {
+    color: #2c5282;
+}
+
   .dark-mode .toggle-dark-mode-btn {
     background-color: #555;
     color: #fff;
@@ -79,9 +87,10 @@
   
   /* Light Mode Styles */
   .light-mode {
-    background-color: #f9f9f9;
-    color: #333;
-  }
+    color: #1a202c;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
   
   .light-mode nav {
     background-color: #4a90e2;
