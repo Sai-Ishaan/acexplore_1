@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './PongBackground.css';
 
 const PongBackground = ({ isDarkMode }) => {
   const canvasRef = useRef(null);
+  // eslint-disable-next-line no-unused-vars
   const [balls, setBalls] = useState([]);
 
   // Create Ball class as a stable reference
