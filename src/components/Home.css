@@ -87,14 +87,14 @@
   
   /* Light Mode Styles */
   .light-mode {
-    color: #1a202c;
+    color: #222222;
     background-color: #ffffff;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
   
   .light-mode nav {
     background-color: #4a90e2;
-    color: #fff;
+    color: #ffffff;
   }
   
   .light-mode .toggle-dark-mode-btn {
@@ -188,6 +188,10 @@
   }
   
   .about-card {
+    background-color: rgba(34, 34, 34, 0.9);
+    color: #ccc;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    z-index: 0;
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
@@ -303,7 +307,7 @@
 }
 
 .navbar-mode-toggle {
-    background-color: #2563eb;
+    background-color: #2f63d3;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 9999px;

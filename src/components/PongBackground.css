@@ -1,0 +1,18 @@
+.pong-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.6;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pong-background.dark {
+    background-color: rgba(26, 32, 44, 0.7);
+  }
+  
+  .pong-background.light {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
