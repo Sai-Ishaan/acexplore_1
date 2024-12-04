@@ -42,5 +42,27 @@
       "November": 0,
       "December": 0
     }
+  },
+  {
+    "id": 3,
+    "name": "Ananya C",
+    "registerNumber": "125015163",
+    "email": "125015163@sastra.ac.in",
+    "badges": ["Contributor"],
+    "xp": 20,
+    "activity": {
+      "January": 2,
+      "February": 1,
+      "March": 0,
+      "April": 3,
+      "May": 1,
+      "June": 1,
+      "July": 2,
+      "August": 2,
+      "September": 1,
+      "October": 7,
+      "November": 0,
+      "December": 0
+    }
   }
 ]
