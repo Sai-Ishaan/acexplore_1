@@ -1,60 +1,46 @@
 [
-    {
-      "id": 1,
-      "name": "Sai Ishaan Balaji",
-      "registerNumber":"125015100",
-      "email": "125015100@sastra.ac.in",
-      "badges": ["Contributor","Participation"],
-      "activity": {
-        "January": 0,
-        "February": 0,
-        "March": 0,
-        "April": 0,
-        "May": 0,
-        "June": 0,
-        "July": 0,
-        "August": 1,
-        "September": 2,
-        "October": 3,
-        "November": 0,
-        "December": 0
-      }
-    },
-    {
-      "id": 2,
-      "name": "Tulip Raaj",
-      "registerNumber": "125015187",
-      "email": "125015187@sastra.ac.in",
-      "badges": ["Contributor"],
-      "activity": {
-        "January": 2,
-        "February": 1,
-        "March": 0,
-        "April": 3,
-        "May": 1,
-        "June": 1,
-        "July": 2,
-        "August": 2,
-        "September": 1,
-        "October": 7,
-        "November": 0,
-        "December": 0
-      }
-    },
-    {
-        "id": 3,
-        "name": "Shubham Pandey",
-        "registerNumber": "127015092",
-        "email": "127015092@sastra.ac.in",
-        "badges": ["Contributor"]
-    },
-    {
-        "id": 4,
-        "name": "Sarveswaran",
-        "registerNumber": "126015099",
-        "email": "126015099@sastra.ac.in",
-        "badges": ["Contributor"]
-      }
- 
-  ]
-  
+  {
+    "id": 1,
+    "name": "Sai Ishaan Balaji",
+    "registerNumber": "125015100",
+    "email": "125015100@sastra.ac.in",
+    "badges": ["Contributor", "Participation"],
+    "xp": 40,
+    "activity": {
+      "January": 0,
+      "February": 0,
+      "March": 0,
+      "April": 0,
+      "May": 0,
+      "June": 0,
+      "July": 0,
+      "August": 1,
+      "September": 2,
+      "October": 3,
+      "November": 0,
+      "December": 0
+    }
+  },
+  {
+    "id": 2,
+    "name": "Tulip Raaj",
+    "registerNumber": "125015187",
+    "email": "125015187@sastra.ac.in",
+    "badges": ["Contributor"],
+    "xp": 20,
+    "activity": {
+      "January": 2,
+      "February": 1,
+      "March": 0,
+      "April": 3,
+      "May": 1,
+      "June": 1,
+      "July": 2,
+      "August": 2,
+      "September": 1,
+      "October": 7,
+      "November": 0,
+      "December": 0
+    }
+  }
+]
