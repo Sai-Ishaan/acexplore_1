@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import LoadingScreen from './LoadingScreen';
 import users from '../data/data.json';
 import LightBulbSwitch from './LightBulbSwitch';
-
+import Footer from './Footer';
 const Home = () => {
     const [registerNumber, setRegisterNumber] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -163,6 +163,7 @@ const Home = () => {
                         <button className="explore-button">Explore More</button>
                     </div>
                 </section>
+                <Footer />
             </div>
         </>
     );
