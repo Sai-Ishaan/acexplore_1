@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-content">
                 <p>&copy; {new Date().getFullYear()} 2025 ACE, SASTRA . All rights reserved.</p>
-                <p className="footer-license">Licensed to Ace Organization</p>
+                <p className="footer-license">Licensed to Association Of Computing Engineers, SASTRA</p>
                 <div className="social-links">
                     <a href="https://github.com/Sai-Ishaan" target="_blank" rel="noopener noreferrer" className="social-icon">
                         <FaGithub />
