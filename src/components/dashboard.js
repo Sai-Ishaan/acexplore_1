@@ -4,7 +4,6 @@ import { FaChevronLeft, FaChevronRight, FaShareAlt, FaMoon, FaSun } from 'react-
 import { WhatsappShareButton, LinkedinShareButton, TwitterShareButton } from 'react-share';
 import { Line, Doughnut, Bar } from 'react-chartjs-2';
 import { Fade } from 'react-awesome-reveal';
-//import ReactTyped from 'react-typed';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -19,6 +18,7 @@ import {
 import './dashboard.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ReactTyped } from 'react-typed';
+import badgeData from '../data/badge.json'; // Import the badge data
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, BarElement, Tooltip, Legend);
 
@@ -91,25 +91,30 @@ const Dashboard = () => {
         }
     };
 
+    // Function to get the badge data from badge.json based on badge name
+    const getBadgeData = (badgeName) => {
+        return badgeData.find((badge) => badge.name.toLowerCase() === badgeName.toLowerCase());
+    };
+
     return (
         <div className={`dashboard container-fluid ${isDarkMode ? 'dark' : 'light'}`}>
             <header className="dashboard-header text-center mb-4">
-    <h1>
-        <span className="welcome-message">
-            <ReactTyped
-                strings={[`Welcome, ${user ? user.name : "Guest"}`]}
-                typeSpeed={100}
-                backSpeed={50}
-                showCursor={false}
-            />
-        </span>
-    </h1>
-    <p>Register Number: {user?.registerNumber}</p>
-    <p>Progress: {userProgress} XP</p>
-    <button className="btn btn-outline-secondary toggle-mode" onClick={toggleDarkMode}>
-        {isDarkMode ? <FaSun /> : <FaMoon />} Toggle Mode
-    </button>
-</header>
+                <h1>
+                    <span className="welcome-message">
+                        <ReactTyped
+                            strings={[`Welcome, ${user ? user.name : "Guest"}`]}
+                            typeSpeed={100}
+                            backSpeed={50}
+                            showCursor={false}
+                        />
+                    </span>
+                </h1>
+                <p>Register Number: {user?.registerNumber}</p>
+                <p>Progress: {userProgress} XP</p>
+                <button className="btn btn-outline-secondary toggle-mode" onClick={toggleDarkMode}>
+                    {isDarkMode ? <FaSun /> : <FaMoon />} Toggle Mode
+                </button>
+            </header>
             <Fade cascade damping={0.1}>
                 <div className="row">
                     <div className="col-md-6 mb-4">
@@ -126,36 +131,42 @@ const Dashboard = () => {
                                     className="badge-list d-flex overflow-auto"
                                     ref={badgeScrollContainerRef}
                                 >
-                                    {userBadges.map((badge, index) => (
-                                        <div key={index} className="badge-item text-center mx-2">
-                                            <img
-                                                src={`../assets/img/${badge.toLowerCase()}.png`}
-                                                alt={badge}
-                                                className="badge-image"
-                                            />
-                                            <p className="badge-name">{badge}</p>
-                                            <div className="badge-share d-flex flex-wrap justify-content-center">
-                                                <WhatsappShareButton
-                                                    url={`https://badge-link.com/${badge}`}
-                                                    className="mx-1"
-                                                >
-                                                    <FaShareAlt />
-                                                </WhatsappShareButton>
-                                                <LinkedinShareButton
-                                                    url={`https://badge-link.com/${badge}`}
-                                                    className="mx-1"
-                                                >
-                                                    <FaShareAlt />
-                                                </LinkedinShareButton>
-                                                <TwitterShareButton
-                                                    url={`https://badge-link.com/${badge}`}
-                                                    className="mx-1"
-                                                >
-                                                    <FaShareAlt />
-                                                </TwitterShareButton>
+                                    {userBadges.map((badge, index) => {
+                                        const badgeDetails = getBadgeData(badge);
+                                        const imageUrl = `/assets/${badgeDetails?.name.toLowerCase()}.jpeg`;
+                                        console.log('Badge Details:', badgeDetails, 'Image URL:', imageUrl); // Debugging line
+
+                                        return badgeDetails ? (
+                                            <div key={index} className="badge-item text-center mx-2">
+                                                <img
+                                                    src={imageUrl}
+                                                    alt={badgeDetails.name}
+                                                    className="badge-image"
+                                                />
+                                                <p className="badge-name">{badgeDetails.name}</p>
+                                                <div className="badge-share d-flex flex-wrap justify-content-center">
+                                                    <WhatsappShareButton
+                                                        url={badgeDetails.shareLink}
+                                                        className="mx-1"
+                                                    >
+                                                        <FaShareAlt />
+                                                    </WhatsappShareButton>
+                                                    <LinkedinShareButton
+                                                        url={badgeDetails.shareLink}
+                                                        className="mx-1"
+                                                    >
+                                                        <FaShareAlt />
+                                                    </LinkedinShareButton>
+                                                    <TwitterShareButton
+                                                        url={badgeDetails.shareLink}
+                                                        className="mx-1"
+                                                    >
+                                                        <FaShareAlt />
+                                                    </TwitterShareButton>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ) : null;
+                                    })}
                                 </div>
                                 <button
                                     className="scroll-arrow btn btn-sm btn-light"
