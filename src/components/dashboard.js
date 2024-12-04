@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight, FaShareAlt, FaMoon, FaSun } from 'react-icons/fa';
 import { WhatsappShareButton, LinkedinShareButton, TwitterShareButton } from 'react-share';
 import { Line, Doughnut, Bar } from 'react-chartjs-2';
+import { Fade } from 'react-awesome-reveal';
+//import ReactTyped from 'react-typed';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -12,11 +14,11 @@ import {
     ArcElement,
     BarElement,
     Tooltip,
-    Legend
+    Legend,
 } from 'chart.js';
 import './dashboard.css';
-import badgeData from '../data/badge.json';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ReactTyped } from 'react-typed';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, BarElement, Tooltip, Legend);
 
@@ -56,8 +58,8 @@ const Dashboard = () => {
                 borderColor: 'rgba(75,192,192,1)',
                 backgroundColor: 'rgba(75,192,192,0.2)',
                 tension: 0.4,
-            }
-        ]
+            },
+        ],
     };
 
     const doughnutChartData = {
@@ -67,8 +69,8 @@ const Dashboard = () => {
                 label: 'Skills Distribution',
                 data: skillsData.map(skill => skill.value),
                 backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
-            }
-        ]
+            },
+        ],
     };
 
     const barChartData = {
@@ -78,8 +80,8 @@ const Dashboard = () => {
                 label: 'Monthly Contributions',
                 data: [12, 19, 8, 15, 10, 20],
                 backgroundColor: '#4BC0C0',
-            }
-        ]
+            },
+        ],
     };
 
     const scrollBadges = (direction) => {
@@ -92,77 +94,109 @@ const Dashboard = () => {
     return (
         <div className={`dashboard container-fluid ${isDarkMode ? 'dark' : 'light'}`}>
             <header className="dashboard-header text-center mb-4">
-                <h1>Welcome, {user?.name}</h1>
-                <p>Register Number: {user?.registerNumber}</p>
-                <p>Progress: {userProgress} XP</p>
-                <button className="btn btn-outline-secondary toggle-mode" onClick={toggleDarkMode}>
-                    {isDarkMode ? <FaSun /> : <FaMoon />} Toggle Mode
-                </button>
-            </header>
-
-            <div className="row">
-                <div className="col-md-6 mb-4">
-                    <div className="card shadow-sm">
-                        <div className="card-header bg-primary text-white">Your Badges</div>
-                        <div className="card-body">
-                            <button className="scroll-arrow btn btn-sm btn-light" onClick={() => scrollBadges('left')}>
-                                <FaChevronLeft />
-                            </button>
-                            <div className="badge-list d-flex overflow-auto" ref={badgeScrollContainerRef}>
-                                {userBadges.map((badge, index) => (
-                                    <div key={index} className="badge-item text-center mx-2">
-                                        <img src={`../assets/img/${badge.toLowerCase()}.png`} alt={badge} className="badge-image" />
-                                        <p className="badge-name">{badge}</p>
-                                        <div className="badge-share d-flex justify-content-center">
-                                            <WhatsappShareButton url={`https://badge-link.com/${badge}`} className="mx-1">
-                                                <FaShareAlt /> <p>Share in WhatsApp</p>
-                                            </WhatsappShareButton>
-                                            <LinkedinShareButton url={`https://badge-link.com/${badge}`} className="mx-1">
-                                                <FaShareAlt /><p>Share in LinkedIn</p>
-                                            </LinkedinShareButton>
-                                            <TwitterShareButton url={`https://badge-link.com/${badge}`} className="mx-1">
-                                                <FaShareAlt /> <p>Share in X/Twitter</p>
-                                            </TwitterShareButton>
+    <h1>
+        <span className="welcome-message">
+            <ReactTyped
+                strings={[`Welcome, ${user ? user.name : "Guest"}`]}
+                typeSpeed={100}
+                backSpeed={50}
+                showCursor={false}
+            />
+        </span>
+    </h1>
+    <p>Register Number: {user?.registerNumber}</p>
+    <p>Progress: {userProgress} XP</p>
+    <button className="btn btn-outline-secondary toggle-mode" onClick={toggleDarkMode}>
+        {isDarkMode ? <FaSun /> : <FaMoon />} Toggle Mode
+    </button>
+</header>
+            <Fade cascade damping={0.1}>
+                <div className="row">
+                    <div className="col-md-6 mb-4">
+                        <div className="card shadow-sm">
+                            <div className="card-header bg-primary text-white">Your Badges</div>
+                            <div className="card-body">
+                                <button
+                                    className="scroll-arrow btn btn-sm btn-light"
+                                    onClick={() => scrollBadges('left')}
+                                >
+                                    <FaChevronLeft />
+                                </button>
+                                <div
+                                    className="badge-list d-flex overflow-auto"
+                                    ref={badgeScrollContainerRef}
+                                >
+                                    {userBadges.map((badge, index) => (
+                                        <div key={index} className="badge-item text-center mx-2">
+                                            <img
+                                                src={`../assets/img/${badge.toLowerCase()}.png`}
+                                                alt={badge}
+                                                className="badge-image"
+                                            />
+                                            <p className="badge-name">{badge}</p>
+                                            <div className="badge-share d-flex flex-wrap justify-content-center">
+                                                <WhatsappShareButton
+                                                    url={`https://badge-link.com/${badge}`}
+                                                    className="mx-1"
+                                                >
+                                                    <FaShareAlt />
+                                                </WhatsappShareButton>
+                                                <LinkedinShareButton
+                                                    url={`https://badge-link.com/${badge}`}
+                                                    className="mx-1"
+                                                >
+                                                    <FaShareAlt />
+                                                </LinkedinShareButton>
+                                                <TwitterShareButton
+                                                    url={`https://badge-link.com/${badge}`}
+                                                    className="mx-1"
+                                                >
+                                                    <FaShareAlt />
+                                                </TwitterShareButton>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
+                                <button
+                                    className="scroll-arrow btn btn-sm btn-light"
+                                    onClick={() => scrollBadges('right')}
+                                >
+                                    <FaChevronRight />
+                                </button>
                             </div>
-                            <button className="scroll-arrow btn btn-sm btn-light" onClick={() => scrollBadges('right')}>
-                                <FaChevronRight />
-                            </button>
+                        </div>
+                    </div>
+
+                    <div className="col-md-6 mb-4">
+                        <div className="card shadow-sm">
+                            <div className="card-header bg-success text-white">Skills Distribution</div>
+                            <div className="card-body">
+                                <Doughnut data={doughnutChartData} />
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="col-md-6 mb-4">
-                    <div className="card shadow-sm">
-                        <div className="card-header bg-success text-white">Skills Distribution</div>
-                        <div className="card-body">
-                            <Doughnut data={doughnutChartData} />
+                <div className="row">
+                    <div className="col-md-12 mb-4">
+                        <div className="card shadow-sm">
+                            <div className="card-header bg-info text-white">XP Progress Over Time</div>
+                            <div className="card-body">
+                                <Line data={lineChartData} />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div className="row">
-                <div className="col-md-12 mb-4">
-                    <div className="card shadow-sm">
-                        <div className="card-header bg-info text-white">XP Progress Over Time</div>
-                        <div className="card-body">
-                            <Line data={lineChartData} />
+                    <div className="col-md-12">
+                        <div className="card shadow-sm">
+                            <div className="card-header bg-warning text-white">Monthly Contributions</div>
+                            <div className="card-body">
+                                <Bar data={barChartData} />
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div className="col-md-12">
-                    <div className="card shadow-sm">
-                        <div className="card-header bg-warning text-white">Monthly Contributions</div>
-                        <div className="card-body">
-                            <Bar data={barChartData} />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </Fade>
         </div>
     );
 };

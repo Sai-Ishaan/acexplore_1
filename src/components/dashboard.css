@@ -1,87 +1,52 @@
 .dashboard {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  padding: 15px; /* Reduced padding for a more compact layout */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dashboard.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dashboard.light {
+  background-color: #ffffff;
+  color: #121212;
+}
+
+.welcome-message {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.toggle-mode {
+  margin-top: 10px;
 }
 
 .badge-item {
-  width: 100px; /* Reduced width for smaller badges */
   text-align: center;
-  margin: 5px; /* Added slight margin for better spacing */
-}
-
-.card {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border-radius: 8px; /* Rounded corners */
-  padding: 10px; /* Reduced padding */
-  width: 180px; /* Smaller card size */
-  text-align: center;
-  transition: transform 0.2s ease-in-out;
-}
-
-.card:hover {
-  transform: translateY(-2px); /* Slight lift on hover */
-}
-
-.chart-container {
-  padding: 10px; /* Reduced padding around charts */
-  margin: 10px auto; /* Centralize and space the chart container */
-  width: 90%; /* Ensure the container fits well within the layout */
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-}
-
-.chart-container h3 {
-  font-size: 1em; /* Smaller font for titles */
-  margin-bottom: 10px;
-  color: var(--text-color);
-}
-
-.badge-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* Reduced spacing between cards */
-  justify-content: center;
 }
 
 .badge-image {
-  max-width: 80%;
-  height: auto;
-  margin-bottom: 5px; /* Tighter margin below image */
-  border-radius: 50%; /* Circle shape for badges */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 70px;
+  border-radius: 50%;
+  transition: transform 0.2s;
 }
 
-.badge-card h3 {
-  font-size: 0.9em; /* Smaller text for compact layout */
-  color: var(--text-color);
-  margin: 4px 0; /* Tighter spacing for headings */
+.badge-image:hover {
+  transform: scale(1.1);
 }
 
-.badge-card p {
-  font-size: 0.75em; /* Smaller descriptive text */
-  color: var(--text-muted-color);
-  margin: 3px 0;
+.badge-name {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: inherit;
+}
+.welcome-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.charts-section {
-  display: flex;
-  flex-wrap: wrap; /* Allow charts to adjust on smaller screens */
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.line-chart, .doughnut-chart {
-  flex: 1 1 45%; /* Adjust width dynamically for responsiveness */
-  max-width: 400px; /* Prevent charts from being too large */
-  min-width: 250px; /* Maintain readability at smaller sizes */
-}
-
-.scroll-container {
-  max-width: 90%; /* Fit scrolling content within the page layout */
-  overflow-x: auto; /* Enable horizontal scrolling */
-  padding: 10px;
-  margin: auto;
+:root {
+  --primary-color: #4BC0C0; /* Change this color for light/dark mode */
 }
