@@ -17,6 +17,13 @@
     color: #4a98f6;
 }
 
+  #ba{
+  background-color: #2a2694;
+  opacity: 10;
+}
+
+
+
   .dark-mode .toggle-dark-mode-btn {
     background-color: #555;
     color: #fff;
@@ -259,7 +266,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #3f64df, #3a30ad); /* Blue to Indigo Gradient */
+    background: linear-gradient(to right, #8166dd, #261ba1); /* Blue to Indigo Gradient */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -271,7 +278,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #62f787, #19b8dc); /* Blue to Indigo Gradient */
+  background: linear-gradient(to right,#5fcae2, #f5f0c2); /* Blue to Indigo Gradient */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 

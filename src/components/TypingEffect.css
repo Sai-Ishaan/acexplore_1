@@ -27,7 +27,7 @@
 
 .glow-light{
     color: #007f7f;
-    text-shadow: 0 0 10px #007f7f, 0 0 20px #007f7f;
+    text-shadow: 0 0 10px #0db2b2, 0 0 20px #239494;
     animation: glow-pulse-light 1s infinite alternate;
 }
 
