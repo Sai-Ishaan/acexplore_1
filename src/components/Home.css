@@ -8,7 +8,7 @@ body{
 .navbar{
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1rem 2rem; 
+  padding: 1px; 
 }
 .navbar-logo{
   font-size: 1.5rem;
