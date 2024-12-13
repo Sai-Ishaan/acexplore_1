@@ -160,7 +160,7 @@ const Home = () => {
                             />
                         )}
                     </p>
-                    <label htmlFor="registerNumber" className="sr-only">Register Number</label>
+                    <label htmlFor="registerNumber" className="sr-only"></label>
                     <input
                         id="registerNumber"
                         type="text"
