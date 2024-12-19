@@ -810,3 +810,111 @@ p {
 .light-mode .navbar-menu {
   background: linear-gradient(to right, #5fcae2, #f5f0c2);
 }
+
+/* Variables for Color Themes */
+:root {
+  --dark-bg: #1a202c;
+  --dark-text: #e2e8f0;
+  --light-bg: #ffffff;
+  --light-text: #333333;
+  --primary: #4BC0C0;
+  --secondary: #FF5733;
+  --gradient-start: #4BC0C0;
+  --gradient-end: #FF5733;
+}
+
+/* Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+/* Light and Dark Modes */
+body.light-mode {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* Gradient Background */
+.gradient {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Header Styling */
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Buttons */
+button {
+  background: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background: var(--primary);
+}
+
+/* Cards */
+.card {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  border: 1px solid var(--dark-text);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+body.dark-mode .card {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+  border: 1px solid var(--light-text);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  header, .footer {
+      text-align: left;
+      padding: 1rem;
+  }
+  .card {
+      padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+      font-size: 1.2rem;
+  }
+  button {
+      width: 100%;
+  }
+}

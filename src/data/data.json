@@ -86,5 +86,27 @@
       "November": 0,
       "December": 0
     }
+  },
+  {
+    "id": 5,
+    "name": "Saketh P",
+    "registerNumber": "125015150",
+    "email": "125015150@sastra.ac.in",
+    "badges": ["Contributor","Participant"],
+    "xp": 20,
+    "activity": {
+      "January": 2,
+      "February": 1,
+      "March": 0,
+      "April": 3,
+      "May": 1,
+      "June": 1,
+      "July": 2,
+      "August": 2,
+      "September": 1,
+      "October": 7,
+      "November": 0,
+      "December": 0
+    }
   }
 ]

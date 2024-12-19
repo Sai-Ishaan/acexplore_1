@@ -18,7 +18,7 @@ import {
 import './dashboard.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ReactTyped } from 'react-typed';
-import badgeData from '../data/badge.json'; // Import the badge data
+import badgeData from '../data/badge.json';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, BarElement, Tooltip, Legend);
 
@@ -91,10 +91,7 @@ const Dashboard = () => {
         }
     };
 
-    // Function to get the badge data from badge.json based on badge name
-    const getBadgeData = (badgeName) => {
-        return badgeData.find((badge) => badge.name.toLowerCase() === badgeName.toLowerCase());
-    };
+    const getBadgeData = (badgeName) => badgeData.find((badge) => badge.name.toLowerCase() === badgeName.toLowerCase());
 
     return (
         <div className={`dashboard container-fluid ${isDarkMode ? 'dark' : 'light'}`}>
@@ -134,7 +131,6 @@ const Dashboard = () => {
                                     {userBadges.map((badge, index) => {
                                         const badgeDetails = getBadgeData(badge);
                                         const imageUrl = `/assets/${badgeDetails?.name.toLowerCase()}.jpeg`;
-                                        console.log('Badge Details:', badgeDetails, 'Image URL:', imageUrl); // Debugging line
 
                                         return badgeDetails ? (
                                             <div key={index} className="badge-item text-center mx-2">
