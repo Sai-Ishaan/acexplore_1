@@ -98,11 +98,13 @@ body, html {
 .light .badge-item {
   background: var(--light-card);
   box-shadow: 0 4px 12px var(--light-shadow);
+  color: var(--light-text);
 }
 
 .dark .badge-item {
   background: var(--dark-card);
   box-shadow: 0 4px 12px var(--dark-shadow);
+  color: var(--dark-text);
 }
 
 .badge-image {
@@ -125,6 +127,14 @@ body, html {
   font-size: 1.2rem;
   font-weight: 600;
   margin-top: 1rem;
+}
+
+.dark .badge-name {
+  color: var(--dark-text);
+}
+
+.light .badge-name {
+  color: var(--light-text);
 }
 
 .badge-share {
@@ -178,7 +188,7 @@ body, html {
 }
 
 .dark .share-button {
-  color: #fff;
+  color: var(--dark-text);
 }
 
 .light .share-button:hover {
@@ -186,7 +196,7 @@ body, html {
 }
 
 .dark .share-button:hover {
-  background-color: #fff;
+  background-color: var(--dark-hover-bg);
 }
 
 .chart-container {
